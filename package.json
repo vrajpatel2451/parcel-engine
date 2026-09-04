@@ -1,6 +1,6 @@
 {
   "name": "@vrajpatel2451/parcel-engine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Store-level parcel packing for Shiprocket shipments",
   "license": "MIT",
   "author": "",
@@ -23,9 +23,17 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist", "README.md", "LICENSE"],
-  "publishConfig": { "access": "public" },
-  "engines": { "node": ">=18" },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --clean",
     "lint": "eslint .",
@@ -42,6 +50,13 @@
     "typescript-eslint": "^8.55.0",
     "vitest": "^4.1.10"
   },
-  "overrides": { "esbuild": "^0.28.1" },
-  "keywords": ["shiprocket", "parcel", "packing", "shipping"]
+  "overrides": {
+    "esbuild": "^0.28.1"
+  },
+  "keywords": [
+    "shiprocket",
+    "parcel",
+    "packing",
+    "shipping"
+  ]
 }
