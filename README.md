@@ -22,3 +22,15 @@ console.log(result.total);   // parcel quote A + parcel quote B + ...
 `breadth` is treated as product/parcel height to preserve the requested API contract. `quantity` defaults to `1`.
 
 The supplied rate-card workbook is not hard-coded: actual charges depend on pickup/delivery zone, courier, weight slabs, COD and surcharges. Inject the live Shiprocket quote as shown so rate changes do not require publishing a new packing library.
+
+## Development and releases
+
+```bash
+npm run lint
+npm run typecheck
+npm test
+npm run test:e2e
+npm run build
+```
+
+Pushes and pull requests to `main` run all quality checks. To publish, configure the `KEY_TO_DISPATCH` repository secret and npm trusted publishing for `.github/workflows/publish.yml`, then run the **Publish to npm** workflow and approve the `npm-production` environment.

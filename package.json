@@ -2,6 +2,16 @@
   "name": "@vrajpatel2451/parcel-engine",
   "version": "0.1.0",
   "description": "Store-level parcel packing for Shiprocket shipments",
+  "license": "MIT",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vrajpatel2451/parcel-engine"
+  },
+  "homepage": "https://github.com/vrajpatel2451/parcel-engine#readme",
+  "bugs": {
+    "url": "https://github.com/vrajpatel2451/parcel-engine/issues"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -14,16 +24,24 @@
     }
   },
   "files": ["dist", "README.md", "LICENSE"],
+  "publishConfig": { "access": "public" },
   "engines": { "node": ">=18" },
   "scripts": {
     "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "lint": "eslint .",
     "test": "vitest run",
-    "typecheck": "tsc --noEmit"
+    "test:e2e": "vitest run test/e2e",
+    "typecheck": "tsc --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "devDependencies": {
+    "@eslint/js": "^9.39.2",
+    "eslint": "^9.39.2",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2",
+    "typescript-eslint": "^8.55.0",
     "vitest": "^4.1.10"
   },
+  "overrides": { "esbuild": "^0.28.1" },
   "keywords": ["shiprocket", "parcel", "packing", "shipping"]
 }
